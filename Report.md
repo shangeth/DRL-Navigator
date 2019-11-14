@@ -22,7 +22,8 @@ The state space has 37 dimensions and contains the agent's velocity, along with 
 
 
 # Agent
-DQN Agent was used to approximate the value function.
+DQN Agent was used to approximate the value function. DQN agents return the value of a state action pair with approximation from neural networks. DQn has experience replay which breaks order of experience and keeps track of buffer of (S(t), A(t), R(t+1), S(t+1)). Samples are sampled randomly from the buffer when the model is trained. Fixed Q targes make sure that the parameters are not shifted towards a moving target and id updated after every n episodes. DOuble DQN helps to avoid oversetimation of action.
+
 ```
 class QNetwork(nn.Module):
     def __init__(self, state_size=37, action_size=4, seed=0):
